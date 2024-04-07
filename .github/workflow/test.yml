@@ -1,1 +1,42 @@
+name: Run tests
 
+on: [push]
+jobs:
+  test1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run test 1
+        run: python find_lowest_number.py test_data/test1_input.txt > test_output.txt
+      
+      - name: Compare output with expected for test 1
+        run: diff test_output.txt test_data/test1_expected.txt
+        continue-on-error: true
+
+  test2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run test 2
+        run: python find_lowest_number.py test_data/test2_input.txt > test_output.txt
+      
+      - name: Compare output with expected for test 2
+        run: diff test_output.txt test_data/test2_expected.txt
+        continue-on-error: true
+
+  test3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run test 3
+        run: python find_lowest_number.py test_data/test3_input.txt > test_output.txt
+      
+      - name: Compare output with expected for test 3
+        run: diff test_output.txt test_data/test3_expected.txt
+        continue-on-error: true
