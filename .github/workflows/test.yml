@@ -18,7 +18,7 @@ jobs:
         run: python3 find_lowest_number.py .test_data/test1_input.txt actual1.txt
       
       - name: Compare1
-        run: diff actual1.txt test_data/test1_expected.txt
+        run: diff actual1.txt .test_data/test1_expected.txt
         continue-on-error: true
 
   test2:
@@ -34,10 +34,10 @@ jobs:
           python-version: "3.10"
       
       - name: Produce actual2.txt output
-        run: python3 find_lowest_number.py test_data/test2_input.txt actual2.txt
+        run: python3 find_lowest_number.py .test_data/test2_input.txt actual2.txt
       
       - name: Compare2
-        run: diff actual2.txt test_data/test2_expected.txt
+        run: diff actual2.txt .test_data/test2_expected.txt
         continue-on-error: true
 
   test3:
@@ -53,8 +53,8 @@ jobs:
           python-version: "3.10"
       
       - name: Produce actual3.txt output
-        run: python3 find_lowest_number.py test_data/test3_input.txt actual3.txt
+        run: python3 find_lowest_number.py .test_data/test3_input.txt actual3.txt
       
       - name: Compare3
-        run: diff actual3.txt test_data/test3_expected.txt
+        run: diff actual3.txt .test_data/test3_expected.txt
         continue-on-error: true
